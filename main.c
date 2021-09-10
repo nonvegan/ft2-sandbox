@@ -57,17 +57,8 @@ int main(void)
     for(size_t i = 0; i < len; i++) {
         char c = text[i];
 
-        unsigned int glyph_index = FT_Get_Char_Index(face, c);
-        if(!glyph_index) {
-            fprintf(stderr, "ERROR: Could not find %c glyph index\n", c);
-        }
-
-        if(FT_Load_Glyph(face, glyph_index, FT_LOAD_DEFAULT)) {
-            fprintf(stderr, "ERROR: Could not load %c with the glyph index %u\n", c, glyph_index);
-        }
-
-        if(FT_Render_Glyph(face->glyph, FT_RENDER_MODE_NORMAL)) {
-            fprintf(stderr, "ERROR: Could not render %c with the glyph index %u\n", c, glyph_index);
+        if(FT_Load_Char(face, text[i], FT_LOAD_RENDER)) {
+            fprintf(stderr, "ERROR: Could not render %c glyph\n", c);
         }
 
         char file_name[64];

@@ -8,5 +8,5 @@ Trying to render some text with freetype2.
 ```console
 $ sudo apt install libfreetype6-dev
 $ make
-$ feh glyphs/*.ppm
+$ feh hello_world.ppm
 ``` 

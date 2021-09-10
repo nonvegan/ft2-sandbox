@@ -85,7 +85,7 @@ int main(void)
             fwrite(face->glyph->bitmap.buffer + y * face->glyph->bitmap.pitch, face->glyph->bitmap.width, 1, f);
 
         fclose(f);
-        printf("INFO: Generated '%c' glyph to %s\n", c, file_name);
+        printf("INFO: Generated '%c' glyph: %s\n", c, file_name);
     }
 
     return 0;

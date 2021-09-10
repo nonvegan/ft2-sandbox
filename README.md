@@ -3,7 +3,7 @@
 # Quickstart
 
 ```console
-sudo apt install libfreetype6-dev
-make
-feh glyphs/*.ppm
+$ sudo apt install libfreetype6-dev
+$ make
+$ feh glyphs/*.ppm
 ``` 

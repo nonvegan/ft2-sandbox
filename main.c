@@ -70,10 +70,10 @@ int main(void)
                     text_bitmap.buffer[(start_y + y) * text_bitmap.pitch + start_x + x] =
                         glyph->bitmap.buffer[y * glyph->bitmap.pitch + x];
 
-        memset(text_bitmap.buffer + text_bitmap.rows / 2 * text_bitmap.pitch, 255, text_bitmap.width);
-
         pen_x += glyph->advance.x >> 6;
     }
+
+    memset(text_bitmap.buffer + text_bitmap.rows / 2 * text_bitmap.pitch, 255, text_bitmap.width);
 
     const char* file_name = "test.ppm";
     FILE *f = fopen(file_name, "w");
